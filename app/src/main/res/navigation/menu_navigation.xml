@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/menu_navigation"
+    app:startDestination="@id/news_nav">
+
+    <fragment
+        android:id="@+id/news_nav"
+        android:name="com.dedesaepulloh.eduka_android_assessment.ui.news.NewsFragment"
+        android:label="@string/news"
+        tools:layout="@layout/fragment_news" />
+
+    <fragment
+        android:id="@+id/favorite_nav"
+        android:name="com.dedesaepulloh.eduka_android_assessment.ui.favorite.FavoriteFragment"
+        android:label="@string/favorite"
+        tools:layout="@layout/fragment_favorite" />
+</navigation>
