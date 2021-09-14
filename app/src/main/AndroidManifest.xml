@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Dedesaepullohedukaandroidassessment"
         tools:ignore="AllowBackup">
-        <activity android:name=".MainActivity" />
+        <activity android:name=".ui.home.MainActivity" />
         <activity
             android:name=".ui.SplashScreenActivity"
             android:theme="@style/Theme.Splash">

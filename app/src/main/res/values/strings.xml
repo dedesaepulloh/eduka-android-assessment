@@ -2,4 +2,8 @@
     <string name="app_name">News App</string>
     <string name="find">find the latest news here.</string>
     <string name="cap_news">NEWS APP</string>
+    <string name="news">News</string>
+    <string name="favorite">Favorite</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
