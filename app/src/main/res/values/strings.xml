@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">dedesaepulloh-eduka-android-assessment</string>
+    <string name="app_name">News App</string>
+    <string name="find">find the latest news here.</string>
+    <string name="cap_news">NEWS APP</string>
 </resources>
