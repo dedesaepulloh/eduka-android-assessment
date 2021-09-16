@@ -2,7 +2,7 @@ package com.dedesaepulloh.eduka_android_assessment.di
 
 import android.content.Context
 import com.dedesaepulloh.eduka_android_assessment.data.source.NewsDataSource
-import com.dedesaepulloh.eduka_android_assessment.ui.detail.DetailNewsActivity
+import com.dedesaepulloh.eduka_android_assessment.ui.detail.DetailActivity
 import com.dedesaepulloh.eduka_android_assessment.ui.favorite.FavoriteFragment
 import com.dedesaepulloh.eduka_android_assessment.ui.news.NewsFragment
 import dagger.BindsInstance
@@ -23,6 +23,6 @@ interface ApplicationComponent {
     fun provideRepository(): NewsDataSource
 
     fun inject(newsFragment: NewsFragment)
-    fun inject(detailNewsActivity: DetailNewsActivity)
+    fun inject(detailActivity: DetailActivity)
     fun inject(favoriteFragment: FavoriteFragment)
 }

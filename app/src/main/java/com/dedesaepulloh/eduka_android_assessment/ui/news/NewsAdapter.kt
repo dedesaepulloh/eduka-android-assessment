@@ -1,10 +1,8 @@
 package com.dedesaepulloh.eduka_android_assessment.ui.news
 
-import android.annotation.SuppressLint
-import android.os.Build
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.annotation.RequiresApi
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -13,7 +11,8 @@ import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.dedesaepulloh.eduka_android_assessment.R
 import com.dedesaepulloh.eduka_android_assessment.data.source.local.entity.NewsEntity
 import com.dedesaepulloh.eduka_android_assessment.databinding.ItemsNewsBinding
-import java.text.SimpleDateFormat
+import com.dedesaepulloh.eduka_android_assessment.ui.detail.DetailActivity
+import com.dedesaepulloh.eduka_android_assessment.utils.Helper
 
 class NewsAdapter : PagedListAdapter<NewsEntity, NewsAdapter.NewsViewHolder>(DIFF_CALLBACK) {
 
@@ -38,6 +37,11 @@ class NewsAdapter : PagedListAdapter<NewsEntity, NewsAdapter.NewsViewHolder>(DIF
                     .transition(DrawableTransitionOptions.withCrossFade())
                     .placeholder(R.drawable.ic_image_broken)
                     .into(imgPoster)
+            }
+            itemView.setOnClickListener {
+                val detail = Intent(itemView.context, DetailActivity::class.java)
+                detail.putExtra(Helper.EXTRA_ID, news.newsId)
+                itemView.context.startActivity(detail)
             }
         }
     }
