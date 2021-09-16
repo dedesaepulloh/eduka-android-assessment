@@ -4,48 +4,35 @@ import com.google.gson.annotations.SerializedName
 
 data class NewsResponse(
 
-	@field:SerializedName("totalResults")
-	val totalResults: Int,
+    @SerializedName("publishedAt")
+    val publishedAt: String?,
 
-	@field:SerializedName("articles")
-	val articles: List<ArticlesItem>,
+    @SerializedName("author")
+    val author: String?,
 
-	@field:SerializedName("status")
-	val status: String
+    @SerializedName("urlToImage")
+    val urlToImage: String?,
+
+    @SerializedName("description")
+    val description: String?,
+
+    @SerializedName("title")
+    val title: String?,
+
+    @SerializedName("url")
+    val url: String?,
+
+    @SerializedName("content")
+    val content: String?,
+
+    @SerializedName("source")
+	val source: Source?
 )
 
 data class Source(
+    @SerializedName("id")
+    val id: String?,
 
-	@field:SerializedName("name")
-	val name: String,
-
-	@field:SerializedName("id")
-	val id: String
-)
-
-data class ArticlesItem(
-
-	@field:SerializedName("publishedAt")
-	val publishedAt: String,
-
-	@field:SerializedName("author")
-	val author: String,
-
-	@field:SerializedName("urlToImage")
-	val urlToImage: String,
-
-	@field:SerializedName("description")
-	val description: String,
-
-	@field:SerializedName("source")
-	val source: Source,
-
-	@field:SerializedName("title")
-	val title: String,
-
-	@field:SerializedName("url")
-	val url: String,
-
-	@field:SerializedName("content")
-	val content: String
+    @SerializedName("name")
+    val name: String?
 )

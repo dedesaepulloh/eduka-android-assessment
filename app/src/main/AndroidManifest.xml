@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".BaseApplication"
         android:allowBackup="true"
         android:fullBackupContent="@xml/backup_descriptor"
         android:icon="@mipmap/ic_launcher"
@@ -14,6 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Dedesaepullohedukaandroidassessment"
         tools:ignore="AllowBackup">
+        <activity android:name=".ui.detail.DetailNewsActivity" />
         <activity android:name=".ui.home.MainActivity" />
         <activity
             android:name=".ui.SplashScreenActivity"
