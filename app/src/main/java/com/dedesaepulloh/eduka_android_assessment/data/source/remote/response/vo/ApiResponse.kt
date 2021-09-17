@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.dedesaepulloh.eduka_android_assessment.data.source.remote.response.vo
 
 class ApiResponse<T>(val status: StatusResponse, val body: T, val message: String?) {

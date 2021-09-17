@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.dedesaepulloh.eduka_android_assessment.utils
 
 import android.os.Handler

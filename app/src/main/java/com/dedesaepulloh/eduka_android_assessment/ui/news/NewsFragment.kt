@@ -30,7 +30,7 @@ class NewsFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         fragmentNewsBinding = FragmentNewsBinding.inflate(inflater, container, false)
         return binding.root
     }

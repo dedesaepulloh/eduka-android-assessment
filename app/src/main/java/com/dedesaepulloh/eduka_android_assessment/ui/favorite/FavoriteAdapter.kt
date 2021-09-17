@@ -12,7 +12,6 @@ import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.dedesaepulloh.eduka_android_assessment.R
 import com.dedesaepulloh.eduka_android_assessment.data.source.local.entity.NewsEntity
 import com.dedesaepulloh.eduka_android_assessment.databinding.ItemsFavoriteBinding
-import com.dedesaepulloh.eduka_android_assessment.databinding.ItemsNewsBinding
 import com.dedesaepulloh.eduka_android_assessment.ui.detail.DetailActivity
 import com.dedesaepulloh.eduka_android_assessment.utils.Helper
 import java.text.SimpleDateFormat
