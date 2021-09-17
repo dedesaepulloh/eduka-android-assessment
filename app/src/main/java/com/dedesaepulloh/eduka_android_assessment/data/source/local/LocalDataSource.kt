@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.paging.DataSource
 import com.dedesaepulloh.eduka_android_assessment.data.source.local.entity.NewsEntity
 import com.dedesaepulloh.eduka_android_assessment.data.source.local.room.NewsDao
+import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -18,4 +19,7 @@ class LocalDataSource @Inject constructor(private val mNewsDao: NewsDao) {
         news.favorite = newState
         mNewsDao.updateNews(news)
     }
+
+    fun searchDatabase(searchQuery: String): Flow<List<NewsEntity>> = mNewsDao.searchNews(searchQuery)
+
 }

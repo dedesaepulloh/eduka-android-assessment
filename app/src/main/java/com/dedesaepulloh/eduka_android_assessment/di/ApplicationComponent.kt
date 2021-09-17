@@ -4,6 +4,7 @@ import android.content.Context
 import com.dedesaepulloh.eduka_android_assessment.data.source.NewsDataSource
 import com.dedesaepulloh.eduka_android_assessment.ui.detail.DetailActivity
 import com.dedesaepulloh.eduka_android_assessment.ui.favorite.FavoriteFragment
+import com.dedesaepulloh.eduka_android_assessment.ui.home.MainActivity
 import com.dedesaepulloh.eduka_android_assessment.ui.news.NewsFragment
 import dagger.BindsInstance
 import dagger.Component
@@ -25,4 +26,5 @@ interface ApplicationComponent {
     fun inject(newsFragment: NewsFragment)
     fun inject(detailActivity: DetailActivity)
     fun inject(favoriteFragment: FavoriteFragment)
+    fun inject(mainActivity: MainActivity)
 }

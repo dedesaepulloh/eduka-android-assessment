@@ -9,5 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="turmeric">#cc8e35</color>
     <color name="black_transparent">#CC0c111b</color>
-    <color name="amour">#ee5253</color>
+    <color name="gray">#EEEEEE</color>
+    <color name="green_100">#ed2126</color>
+    <color name="green_200">#d63031</color>
 </resources>

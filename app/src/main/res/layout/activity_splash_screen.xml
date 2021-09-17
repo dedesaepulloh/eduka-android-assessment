@@ -28,7 +28,7 @@
         android:layout_marginTop="4dp"
         android:gravity="center"
         android:text="@string/cap_news"
-        android:textColor="@color/amour"
+        android:textColor="@color/green_100"
         android:textSize="23sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"

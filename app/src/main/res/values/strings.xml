@@ -9,4 +9,9 @@
     <string name="detail_news">Detail News</string>
     <string name="author">Author</string>
     <string name="published_at">Published at</string>
+    <string name="removed_favorite">removed from your favorite</string>
+    <string name="add_favorite">add to your favorite</string>
+    <string name="empty_favorite">You dont have a list of favorite :(</string>
+    <string name="search">Search</string>
+    <string name="website">Website</string>
 </resources>

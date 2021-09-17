@@ -5,6 +5,8 @@ import androidx.lifecycle.ViewModelProvider
 import com.dedesaepulloh.eduka_android_assessment.data.source.NewsRepository
 import com.dedesaepulloh.eduka_android_assessment.di.AppScope
 import com.dedesaepulloh.eduka_android_assessment.ui.detail.DetailViewModel
+import com.dedesaepulloh.eduka_android_assessment.ui.favorite.FavoriteViewModel
+import com.dedesaepulloh.eduka_android_assessment.ui.home.MainViewModel
 import com.dedesaepulloh.eduka_android_assessment.ui.news.NewsViewModel
 import javax.inject.Inject
 
@@ -17,6 +19,12 @@ class ViewModelFactory @Inject constructor(private val mNewsRepository: NewsRepo
             }
             modelClass.isAssignableFrom(DetailViewModel::class.java) -> {
                 DetailViewModel(mNewsRepository) as T
+            }
+            modelClass.isAssignableFrom(FavoriteViewModel::class.java) -> {
+                FavoriteViewModel(mNewsRepository) as T
+            }
+            modelClass.isAssignableFrom(MainViewModel::class.java) -> {
+                MainViewModel(mNewsRepository) as T
             }
             else -> throw Throwable("Unknown ViewModel class: " + modelClass.name)
         }

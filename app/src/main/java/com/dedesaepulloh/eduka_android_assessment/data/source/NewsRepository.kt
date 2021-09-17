@@ -7,10 +7,10 @@ import com.dedesaepulloh.eduka_android_assessment.data.source.local.LocalDataSou
 import com.dedesaepulloh.eduka_android_assessment.data.source.local.entity.NewsEntity
 import com.dedesaepulloh.eduka_android_assessment.data.source.remote.RemoteDataSource
 import com.dedesaepulloh.eduka_android_assessment.data.source.remote.response.news.NewsResponse
-import com.dedesaepulloh.eduka_android_assessment.data.source.remote.response.news.Source
 import com.dedesaepulloh.eduka_android_assessment.data.source.remote.response.vo.ApiResponse
 import com.dedesaepulloh.eduka_android_assessment.utils.AppExecutors
 import com.dedesaepulloh.eduka_android_assessment.vo.Resource
+import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -81,5 +81,8 @@ class NewsRepository @Inject constructor(
     override fun setFavoriteNews(news: NewsEntity, state: Boolean) {
         appExecutors.diskIO().execute { localDataSource.setFavoriteNews(news, state) }
     }
+
+    fun searchNews(searchQuery: String): Flow<List<NewsEntity>> =
+        localDataSource.searchDatabase(searchQuery)
 
 }

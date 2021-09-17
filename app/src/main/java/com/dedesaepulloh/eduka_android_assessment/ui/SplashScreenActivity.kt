@@ -1,10 +1,10 @@
 package com.dedesaepulloh.eduka_android_assessment.ui
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.dedesaepulloh.eduka_android_assessment.ui.home.MainActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.dedesaepulloh.eduka_android_assessment.databinding.ActivitySplashScreenBinding
+import com.dedesaepulloh.eduka_android_assessment.ui.home.MainActivity
 import com.dedesaepulloh.eduka_android_assessment.utils.Helper.TIME_MILLIS
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

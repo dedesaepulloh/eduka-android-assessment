@@ -3,15 +3,13 @@ package com.dedesaepulloh.eduka_android_assessment.ui.news
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dedesaepulloh.eduka_android_assessment.BaseApplication
-import com.dedesaepulloh.eduka_android_assessment.R
 import com.dedesaepulloh.eduka_android_assessment.databinding.FragmentNewsBinding
 import com.dedesaepulloh.eduka_android_assessment.viewmodel.ViewModelFactory
 import com.dedesaepulloh.eduka_android_assessment.vo.Status
@@ -60,7 +58,6 @@ class NewsFragment : Fragment() {
                         news.data?.let {
                             adapter.submitList(it)
                             adapter.notifyDataSetChanged()
-//                            Log.i("isi :", "${news.body()?.articles}")
                             Log.i("DATA : ", news.toString())
                             showLoading(false)
                         }
@@ -86,5 +83,4 @@ class NewsFragment : Fragment() {
             }
         }
     }
-
 }

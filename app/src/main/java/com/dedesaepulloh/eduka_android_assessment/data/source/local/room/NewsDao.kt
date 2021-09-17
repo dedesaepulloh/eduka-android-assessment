@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.paging.DataSource
 import androidx.room.*
 import com.dedesaepulloh.eduka_android_assessment.data.source.local.entity.NewsEntity
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface NewsDao {
@@ -22,5 +23,8 @@ interface NewsDao {
 
     @Update
     fun updateNews(news: NewsEntity)
+
+    @Query("SELECT * FROM tbl_news WHERE title LIKE :searchQuery")
+    fun searchNews(searchQuery: String): Flow<List<NewsEntity>>
 
 }

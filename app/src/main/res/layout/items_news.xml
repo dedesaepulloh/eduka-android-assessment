@@ -22,30 +22,34 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
-        <ImageView
-            android:id="@+id/img_poster"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_gravity="fill"
-            android:contentDescription="@string/app_name"
-            android:foregroundGravity="fill"
-            android:scaleType="center"
-            tools:srcCompat="@drawable/ic_image_broken" />
-    </androidx.cardview.widget.CardView>
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tv_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:maxLines="2"
-        android:text="Fitbit adds ECG and stress-level scanning to its Charge fitness tracker"
-        android:textColor="@color/black_transparent"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+            <ImageView
+                android:id="@+id/img_poster"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_gravity="fill"
+                android:contentDescription="@string/app_name"
+                android:foregroundGravity="fill"
+                android:scaleType="center"
+                tools:srcCompat="@drawable/ic_image_broken" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:maxLines="2"
+                android:layout_marginStart="3dp"
+                android:layout_marginBottom="10dp"
+                tools:text="Fitbit adds ECG and stress-level scanning to its Charge fitness tracker"
+                android:textColor="@color/gray_900"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

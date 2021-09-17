@@ -1,19 +1,19 @@
 package com.dedesaepulloh.eduka_android_assessment.ui.detail
 
 import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.dedesaepulloh.eduka_android_assessment.BaseApplication
 import com.dedesaepulloh.eduka_android_assessment.R
 import com.dedesaepulloh.eduka_android_assessment.data.source.local.entity.NewsEntity
 import com.dedesaepulloh.eduka_android_assessment.databinding.ActivityDetailNewsBinding
-import com.dedesaepulloh.eduka_android_assessment.utils.Helper
 import com.dedesaepulloh.eduka_android_assessment.utils.Helper.EXTRA_ID
 import com.dedesaepulloh.eduka_android_assessment.viewmodel.ViewModelFactory
+import com.google.android.material.snackbar.Snackbar
 import java.text.SimpleDateFormat
 import javax.inject.Inject
 
@@ -43,6 +43,7 @@ class DetailActivity : AppCompatActivity() {
             detailViewModel.getNewsDetail(newsSourceId.toString()).observe(this, {
                 supportActionBar?.title = getString(R.string.detail_news)
                 newsLoadData(it)
+                setActionButton(it)
                 showLoading(false)
             })
         }
@@ -72,13 +73,41 @@ class DetailActivity : AppCompatActivity() {
                     .placeholder(R.drawable.ic_image_broken)
                     .into(roundedImg)
             }
-//            setFavoriteState(favorite)
+            setFavoriteState(favorite)
         }
     }
 
-//    private fun setFavoriteState(favorite: Boolean) {
-//
-//    }
+    private fun setActionButton(
+        news: NewsEntity?
+    ) {
+        activityDetailBinding.itemDetail.addFavorite.setOnClickListener {
+            setFavorite(news)
+        }
+    }
+
+    private fun setFavorite(news: NewsEntity?) {
+        if (news != null) {
+            if (news.favorite) {
+                showSnackBar(getString(R.string.removed_favorite))
+            } else {
+                showSnackBar(getString(R.string.add_favorite))
+            }
+            detailViewModel.setFavoriteNews(news)
+        }
+    }
+
+    private fun setFavoriteState(isFavorite: Boolean) {
+        if (isFavorite) {
+            activityDetailBinding.itemDetail.addFavorite.setImageResource(R.drawable.ic_full_favorite)
+        } else {
+            activityDetailBinding.itemDetail.addFavorite.setImageResource(R.drawable.ic_favorite_border)
+        }
+    }
+
+    private fun showSnackBar(msg: String) {
+        Snackbar.make(activityDetailBinding.root, msg, Snackbar.LENGTH_LONG)
+            .show()
+    }
 
     private fun showLoading(state: Boolean) {
         if (state) {

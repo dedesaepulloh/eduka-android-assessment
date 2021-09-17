@@ -15,4 +15,10 @@
         android:name="com.dedesaepulloh.eduka_android_assessment.ui.favorite.FavoriteFragment"
         android:label="@string/favorite"
         tools:layout="@layout/fragment_favorite" />
+
+    <fragment
+        android:id="@+id/web_nav"
+        android:name="com.dedesaepulloh.eduka_android_assessment.ui.WebviewFragment"
+        android:label="@string/website"
+        tools:layout="@layout/fragment_webview" />
 </navigation>

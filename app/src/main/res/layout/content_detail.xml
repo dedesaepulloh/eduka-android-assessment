@@ -107,7 +107,7 @@
             android:contentDescription="@string/favorite"
             android:focusable="true"
             android:src="@drawable/ic_favorite_border"
-            app:backgroundTint="@color/turmeric"
+            app:backgroundTint="@color/green_200"
             app:layout_constraintBottom_toBottomOf="@+id/tv_publis"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.867"
