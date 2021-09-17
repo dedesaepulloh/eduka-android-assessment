@@ -17,7 +17,7 @@ import com.dedesaepulloh.eduka_android_assessment.ui.detail.DetailActivity
 import com.dedesaepulloh.eduka_android_assessment.utils.Helper
 import java.text.SimpleDateFormat
 
-class FavoriteAdapter: PagedListAdapter<NewsEntity, FavoriteAdapter.FavoriteViewHolder>(FavoriteAdapter.DIFF_CALLBACK)  {
+class FavoriteAdapter: PagedListAdapter<NewsEntity, FavoriteAdapter.FavoriteViewHolder>(DIFF_CALLBACK)  {
 
     companion object {
         private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<NewsEntity>() {

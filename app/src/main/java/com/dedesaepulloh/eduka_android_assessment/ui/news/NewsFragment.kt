@@ -64,6 +64,7 @@ class NewsFragment : Fragment() {
                     }
                     Status.ERROR -> {
                         showLoading(false)
+                        showTryAgain(true)
                     }
                 }
             }
@@ -81,6 +82,22 @@ class NewsFragment : Fragment() {
                 rvNews.visibility = View.VISIBLE
                 progressBar.visibility = View.GONE
             }
+        }
+    }
+
+    private fun showTryAgain(state: Boolean) {
+        if (state) {
+            binding.tryagainNews.apply {
+                imgTryAgain.visibility = View.VISIBLE
+                tryagainLoad.visibility = View.VISIBLE
+            }
+            binding.rvNews.visibility = View.GONE
+        } else {
+            binding.tryagainNews.apply {
+                imgTryAgain.visibility = View.GONE
+                tryagainLoad.visibility = View.GONE
+            }
+            binding.rvNews.visibility = View.VISIBLE
         }
     }
 }
