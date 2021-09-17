@@ -15,7 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/items_news" />
+        tools:listitem="@layout/items_favorite" />
     <include
         android:id="@+id/news_empty"
         layout="@layout/favorite_empty"

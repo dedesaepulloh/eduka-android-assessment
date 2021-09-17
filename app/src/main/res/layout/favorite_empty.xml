@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:id="@+id/parent_empty"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:visibility="gone">
+    android:visibility="visible">
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/img_empty_list"

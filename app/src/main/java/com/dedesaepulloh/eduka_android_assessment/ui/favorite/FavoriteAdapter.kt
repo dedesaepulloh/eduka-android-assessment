@@ -1,5 +1,6 @@
 package com.dedesaepulloh.eduka_android_assessment.ui.favorite
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -10,9 +11,11 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.dedesaepulloh.eduka_android_assessment.R
 import com.dedesaepulloh.eduka_android_assessment.data.source.local.entity.NewsEntity
+import com.dedesaepulloh.eduka_android_assessment.databinding.ItemsFavoriteBinding
 import com.dedesaepulloh.eduka_android_assessment.databinding.ItemsNewsBinding
 import com.dedesaepulloh.eduka_android_assessment.ui.detail.DetailActivity
 import com.dedesaepulloh.eduka_android_assessment.utils.Helper
+import java.text.SimpleDateFormat
 
 class FavoriteAdapter: PagedListAdapter<NewsEntity, FavoriteAdapter.FavoriteViewHolder>(FavoriteAdapter.DIFF_CALLBACK)  {
 
@@ -28,10 +31,19 @@ class FavoriteAdapter: PagedListAdapter<NewsEntity, FavoriteAdapter.FavoriteView
         }
     }
 
-    inner class FavoriteViewHolder(private val binding: ItemsNewsBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class FavoriteViewHolder(private val binding: ItemsFavoriteBinding) : RecyclerView.ViewHolder(binding.root) {
+        @SuppressLint("SimpleDateFormat")
         fun bind(favorite : NewsEntity){
             binding.apply {
-                tvTitle.text = favorite.title
+                tvTitleFav.text = favorite.title
+                val parser = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'")
+                val formatter = SimpleDateFormat("dd MMMM yyyy")
+                val output: String = if (favorite.publishedAt.isEmpty()) {
+                    "getString(R.string.strip)"
+                } else {
+                    formatter.format(parser.parse(favorite.publishedAt))
+                }
+                tvPublisFav.text = output
                 Glide.with(itemView)
                     .load(favorite.urlToImage)
                     .transition(DrawableTransitionOptions.withCrossFade())
@@ -47,7 +59,7 @@ class FavoriteAdapter: PagedListAdapter<NewsEntity, FavoriteAdapter.FavoriteView
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavoriteAdapter.FavoriteViewHolder {
-        val mView = ItemsNewsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val mView = ItemsFavoriteBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return FavoriteViewHolder(mView)
     }
 
